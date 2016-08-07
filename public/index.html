@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>My App</title>
+	<script src="/js/main.js"></script>
+	<script src="/vendor/jquery/jquery.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&language=EN"></script>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body class="full">
+
+
+
+
+ <div class="container" ng-controller="MainController">
+	 
+	<div class="alert alert-warning" ng-if="message != ''">
+    	<a href="#" class="close" data-dismiss="alert" ng-click="ClearMSG()">&times;</a>
+    	<strong>Error!</strong> {{message}}.
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="steps">&nbsp;</div>
+		</div>
+		<div class="col-md-12 center-block text-center">
+			<h2>Please select a Localitation<br>
+			Or click "use my Localitation"</h2>
+			
+		</div>
+	</div>
+
+	<div class="row">
+	    <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center ">
+	        <div class="input-group">
+    			<input type="text"  ng-autocomplete ng-model="locale" ng-click="locale = null" options="options" details="details"/>
+	   			<span class="input-group-btn">
+			        <button class="btn btn-primary" type="button" ng-click="GetWeather(locale)">Search</button>
+			        <button class="btn btn-primary" type="button" ng-click="GetWeatherByCoor()" >Use my Localization</button>
+	   			</span>
+	        </div>
+	    </div>
+	</div>
+
+<div class="row">
+	    <div class="col-md-12">
+	        <table class="table" ng-if="tableData.length > 1">
+			    <thead>
+			      <tr>
+			        <th>Day</th>
+			        <th>Max</th>
+			        <th>Min</th>
+					<th>Forecast</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr ng-repeat="x in tableData">
+			      	<td>{{x.item.forecast.date}}</td>
+			        <td>{{x.item.forecast.high}}</td>
+			        <td>{{x.item.forecast.low}}</td>
+			      	<td>{{x.item.forecast.text}}</td>
+			      </tr>
+			    </tbody>
+			  </table>
+	    </div>
+	</div>
+</div>
+</body>
+</html>

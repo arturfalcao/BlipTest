@@ -1,0 +1,45 @@
+{
+  "name": "blip",
+  "version": "1.0.0",
+  "description": "Blip Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturfalcao/BlipTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arturfalcao/BlipTest/issues"
+  },
+  "homepage": "https://github.com/arturfalcao/BlipTest#readme",
+  "devDependencies": {
+    "brfs": "^1.4.3",
+    "browserify": "^13.1.0",
+    "browserify-shim": "^3.8.12",
+    "grunt-template-jasmine-requirejs": "^0.2.3",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-fontgen": "^0.2.5",
+    "gulp-ruby-sass": "^2.0.6",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.2",
+    "karma-browserify": "^5.1.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-requirejs": "^1.0.0",
+    "requirejs": "^2.2.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "browserify-shim": {
+    "external": "global:External"
+  },
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
