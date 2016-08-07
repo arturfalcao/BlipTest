@@ -22,7 +22,7 @@ module.exports = function($scope,$http) {
 		$scope.coorReq = "({ " + $scope.position.coords.latitude + " },{" + $scope.position.coords.longitude + "})";
 		$scope.GetWeather($scope.coorReq);
 	};
-
+ 
 	//Clear message de erro 
 	$scope.ClearMSG = function(){
 		$scope.message = "";
